@@ -1,0 +1,111 @@
+<div class="form">
+  <form (ngSubmit)="save()" autocomplete="off" [formGroup]="myForm">
+    <div class="form__container">
+      <h1 class="form__title">Sign Up</h1>
+
+      <div class="form__group">
+        <div class="form__box">
+          <div class="form__input">
+            <label class="form__label">First Name</label>
+            <input
+              class="form__input-input"
+              type="text"
+              formControlName="firstName"
+            />
+          </div>
+          <div class="form__alert">
+            <span *ngIf="inputIsValid('firstName')"
+              >first name has to be atleast 3 characters</span
+            >
+          </div>
+        </div>
+        <div class="form__box">
+          <div class="form__input">
+            <label class="form__label">Last Name</label>
+            <input
+              class="form__input-input"
+              type="text"
+              formControlName="lastName"
+            />
+          </div>
+          <div class="form__alert">
+            <span *ngIf="inputIsValid('lastName')"
+              >last name has to be atleast 3 characters</span
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="form__group">
+        <div class="form__box">
+          <div class="form__input">
+            <label class="form__label">Username</label>
+            <input
+              class="form__input-input"
+              type="text"
+              formControlName="username"
+            />
+          </div>
+          <div class="form__alert">
+            <span *ngIf="inputIsValid('username')"
+              >username has to be atleast 5 characters</span
+            >
+          </div>
+        </div>
+        <div class="form__box">
+          <div class="form__input">
+            <label class="form__label">Password</label>
+            <input
+              class="form__input-input"
+              type="password"
+              formControlName="password"
+            />
+          </div>
+          <div class="form__alert">
+            <span *ngIf="inputIsValid('password')"
+              >password has to be atleast 6 characters</span
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="form__group">
+        <div class="form__box">
+          <div class="form__input">
+            <label class="form__label">Profile picture</label>
+            <input
+              class="form__input-input"
+              type="file"
+              formControlName="profilePic"
+            />
+          </div>
+          <span></span>
+        </div>
+
+        <div class="form__box">
+          <div class="form__input">
+            <label class="form__label">Email</label>
+            <input
+              class="form__input-input"
+              type="text"
+              formControlName="email"
+            />
+          </div>
+          <div class="form__alert">
+            <span *ngIf="inputIsValid('email')">enter a valid email</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="form__center">
+        <button class="form__button" type="submit">Sign Up</button>
+      </div>
+
+      <div>
+        <span class="form__tologin"> Already have an account? </span>
+
+        <a routerLink="/auth/login"> Log in </a>
+      </div>
+    </div>
+  </form>
+</div>

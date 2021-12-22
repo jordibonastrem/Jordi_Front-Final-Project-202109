@@ -1,0 +1,121 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+
+.form {
+  height: 100vh;
+  text-align: center;
+  display: flex;
+  font-family: nexa-regular, sans-serif, Arial;
+  justify-content: center;
+  align-items: center;
+
+  background-size: cover;
+  background-position: center;
+  /* background: url(assets/images/wallpaper.jpg); */
+}
+
+.form__container {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  position: relative;
+  width: 400px;
+  background: white;
+  padding: 60px 40px;
+}
+
+.form__title {
+  font-size: 40px;
+  margin-bottom: 60px;
+  font-family: nexa-bold;
+}
+.form__input {
+  margin: 25px;
+  position: relative;
+  height: 50px;
+}
+
+.form__input-input {
+  height: 100%;
+  width: 100%;
+  border: 1px solid #c2c2c2;
+  padding-left: 15px;
+  outline: none;
+  font-size: 14px;
+  transition: 0.4s;
+}
+.form__input-input:focus {
+  border: 1px solid #01691d;
+}
+
+.form__box {
+  display: flex;
+  flex-direction: column;
+}
+
+.form__label {
+  position: absolute;
+  padding-bottom: 5px;
+  top: 40%;
+  left: 15px;
+  transform: translateY(-80%);
+  pointer-events: none;
+  font-size: 10px;
+  color: grey;
+}
+
+.form__button {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  align-items: center;
+  background-color: #01691d;
+  border: 0;
+  border-radius: 100px;
+  box-sizing: border-box;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-flex;
+
+  font-size: 16px;
+  font-weight: 600;
+  justify-content: center;
+  line-height: 20px;
+  width: 85%;
+
+  max-width: 480px;
+  min-height: 40px;
+  min-width: 0px;
+  overflow: hidden;
+  padding: 0px;
+  padding-left: 20px;
+  padding-right: 20px;
+  text-align: center;
+  touch-action: manipulation;
+}
+
+.form__button:hover,
+.form__button:focus {
+  background-color: #4caf50;
+  color: #ffffff;
+}
+
+.form__button:active {
+  background: #09223b;
+
+  color: rgb(255, 255, 255, 0.7);
+}
+
+.form__alert {
+  position: absolute;
+  transform: translateY(80px);
+
+  margin-left: 29px;
+  font-size: 10px;
+
+  color: red;
+}
+.form__text {
+  margin-top: 35px;
+  color: black;
+}

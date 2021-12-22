@@ -1,0 +1,426 @@
+<div class="general">
+  <div class="container">
+    <div class="card">
+      <div class="imgBx">
+        <img
+          [src]="breed.breedPhoto || './assets/images/profileimage.png'"
+          alt=""
+          height="100%"
+          width="100%"
+        />
+      </div>
+      <div>
+        <h2 class="title">{{ breed.breedName }}</h2>
+        <p class="description">{{ breed.description }}</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="stats-delete-update">
+    <div *ngIf="updateMode; else showStats">
+      <div class="stats__editable">
+        <div class="stats__box">
+          <h3>ADAPTABILITY</h3>
+          <fa-icon
+            (click)="toggleAdaptStar1()"
+            [ngClass]="{ active: adaptabilityStars[0] }"
+            [icon]="faStar"
+            size="3x"
+          ></fa-icon>
+          <fa-icon
+            (click)="toggleAdaptStar2()"
+            [ngClass]="{ active: adaptabilityStars[1] }"
+            [icon]="faStar"
+            size="3x"
+          ></fa-icon>
+          <fa-icon
+            (click)="toggleAdaptStar3()"
+            [ngClass]="{ active: adaptabilityStars[2] }"
+            [icon]="faStar"
+            size="3x"
+          ></fa-icon>
+          <fa-icon
+            (click)="toggleAdaptStar4()"
+            [ngClass]="{ active: adaptabilityStars[3] }"
+            [icon]="faStar"
+            size="3x"
+          ></fa-icon>
+          <fa-icon
+            (click)="toggleAdaptStar5()"
+            [ngClass]="{ active: adaptabilityStars[4] }"
+            [icon]="faStar"
+            size="3x"
+          ></fa-icon>
+        </div>
+
+        <div class="stats__box">
+          <h3>FRIENDLINESS</h3>
+          <fa-icon
+            (click)="toggleFriendStar1()"
+            [ngClass]="{ active: friendLinessStars[0] }"
+            [icon]="faStar"
+            size="3x"
+          ></fa-icon>
+          <fa-icon
+            (click)="toggleFriendStar2()"
+            [ngClass]="{ active: friendLinessStars[1] }"
+            [icon]="faStar"
+            size="3x"
+          ></fa-icon>
+          <fa-icon
+            (click)="toggleFriendStar3()"
+            [ngClass]="{ active: friendLinessStars[2] }"
+            [icon]="faStar"
+            size="3x"
+          ></fa-icon>
+          <fa-icon
+            (click)="toggleFriendStar4()"
+            [ngClass]="{ active: friendLinessStars[3] }"
+            [icon]="faStar"
+            size="3x"
+          ></fa-icon>
+          <fa-icon
+            (click)="toggleFriendStar5()"
+            [ngClass]="{ active: friendLinessStars[4] }"
+            [icon]="faStar"
+            size="3x"
+          ></fa-icon>
+        </div>
+
+        <div class="stats__box">
+          <h3>HEALTH NEEDS</h3>
+          <fa-icon
+            (click)="toggleHealthStar1()"
+            [ngClass]="{ active: healthNeedsStars[0] }"
+            [icon]="faStar"
+            size="3x"
+          ></fa-icon>
+          <fa-icon
+            (click)="toggleHealthStar2()"
+            [ngClass]="{ active: healthNeedsStars[1] }"
+            [icon]="faStar"
+            size="3x"
+          ></fa-icon>
+          <fa-icon
+            (click)="toggleHealthStar3()"
+            [ngClass]="{ active: healthNeedsStars[2] }"
+            [icon]="faStar"
+            size="3x"
+          ></fa-icon>
+          <fa-icon
+            (click)="toggleHealthStar4()"
+            [ngClass]="{ active: healthNeedsStars[3] }"
+            [icon]="faStar"
+            size="3x"
+          ></fa-icon>
+          <fa-icon
+            (click)="toggleHealthStar5()"
+            [ngClass]="{ active: healthNeedsStars[4] }"
+            [icon]="faStar"
+            size="3x"
+          ></fa-icon>
+        </div>
+
+        <div class="stats__box">
+          <h3>PHYSICAL NEEDS</h3>
+          <fa-icon
+            [icon]="faStar"
+            (click)="togglePhysicStar1()"
+            [ngClass]="{ active: physicalNeedsStars[0] }"
+            size="3x"
+          ></fa-icon>
+          <fa-icon
+            (click)="togglePhysicStar2()"
+            [ngClass]="{ active: physicalNeedsStars[1] }"
+            [icon]="faStar"
+            size="3x"
+          ></fa-icon>
+          <fa-icon
+            (click)="togglePhysicStar3()"
+            [ngClass]="{ active: physicalNeedsStars[2] }"
+            [icon]="faStar"
+            size="3x"
+          ></fa-icon>
+          <fa-icon
+            (click)="togglePhysicStar4()"
+            [ngClass]="{ active: physicalNeedsStars[3] }"
+            [icon]="faStar"
+            size="3x"
+          ></fa-icon>
+          <fa-icon
+            (click)="togglePhysicStar5()"
+            [ngClass]="{ active: physicalNeedsStars[4] }"
+            [icon]="faStar"
+            size="3x"
+          ></fa-icon>
+        </div>
+
+        <div class="stats__box">
+          <h3>TRAINABILITY</h3>
+          <fa-icon
+            (click)="toggleTrainStar1()"
+            [ngClass]="{ active: trainabilityStars[0] }"
+            [icon]="faStar"
+            size="3x"
+          ></fa-icon>
+          <fa-icon
+            (click)="toggleTrainStar2()"
+            [ngClass]="{ active: trainabilityStars[1] }"
+            [icon]="faStar"
+            size="3x"
+          ></fa-icon>
+          <fa-icon
+            (click)="toggleTrainStar3()"
+            [ngClass]="{ active: trainabilityStars[2] }"
+            [icon]="faStar"
+            size="3x"
+          ></fa-icon>
+          <fa-icon
+            (click)="toggleTrainStar4()"
+            [ngClass]="{ active: trainabilityStars[3] }"
+            [icon]="faStar"
+            size="3x"
+          ></fa-icon>
+          <fa-icon
+            (click)="toggleTrainStar5()"
+            [ngClass]="{ active: trainabilityStars[4] }"
+            [icon]="faStar"
+            size="3x"
+          ></fa-icon>
+        </div>
+        <div class="stats__box">
+          <h3>VOCALITY</h3>
+          <fa-icon
+            (click)="toggleVocStar1()"
+            [ngClass]="{ active: vocalityStars[0] }"
+            [icon]="faStar"
+            size="3x"
+          ></fa-icon>
+          <fa-icon
+            (click)="toggleVocStar2()"
+            [ngClass]="{ active: vocalityStars[1] }"
+            [icon]="faStar"
+            size="3x"
+          ></fa-icon>
+          <fa-icon
+            (click)="toggleVocStar3()"
+            [ngClass]="{ active: vocalityStars[2] }"
+            [icon]="faStar"
+            size="3x"
+          ></fa-icon>
+          <fa-icon
+            (click)="toggleVocStar4()"
+            [ngClass]="{ active: vocalityStars[3] }"
+            [icon]="faStar"
+            size="3x"
+          ></fa-icon>
+          <fa-icon
+            (click)="toggleVocStar5()"
+            [ngClass]="{ active: vocalityStars[4] }"
+            [icon]="faStar"
+            size="3x"
+          ></fa-icon>
+        </div>
+      </div>
+    </div>
+
+    <ng-template #showStats>
+      <div class="stats">
+        <div class="stats__box">
+          <h3>ADAPTABILITY</h3>
+          <fa-icon
+            [ngClass]="{ active: breed.adaptability > 0 }"
+            [icon]="faStar"
+            size="3x"
+          ></fa-icon>
+          <fa-icon
+            [ngClass]="{ active: breed.adaptability > 1 }"
+            [icon]="faStar"
+            size="3x"
+          ></fa-icon>
+          <fa-icon
+            [ngClass]="{ active: breed.adaptability > 2 }"
+            [icon]="faStar"
+            size="3x"
+          ></fa-icon>
+          <fa-icon
+            [ngClass]="{ active: breed.adaptability > 3 }"
+            [icon]="faStar"
+            size="3x"
+          ></fa-icon>
+          <fa-icon
+            [ngClass]="{ active: breed.adaptability > 4 }"
+            [icon]="faStar"
+            size="3x"
+          ></fa-icon>
+        </div>
+
+        <div class="stats__box">
+          <h3>FRIENDLINESS</h3>
+          <fa-icon
+            [ngClass]="{ active: breed.friendliness > 0 }"
+            [icon]="faStar"
+            size="3x"
+          ></fa-icon>
+          <fa-icon
+            [ngClass]="{ active: breed.friendliness > 1 }"
+            [icon]="faStar"
+            size="3x"
+          ></fa-icon>
+          <fa-icon
+            [ngClass]="{ active: breed.friendliness > 2 }"
+            [icon]="faStar"
+            size="3x"
+          ></fa-icon>
+          <fa-icon
+            [ngClass]="{ active: breed.friendliness > 3 }"
+            [icon]="faStar"
+            size="3x"
+          ></fa-icon>
+          <fa-icon
+            [ngClass]="{ active: breed.friendliness > 4 }"
+            [icon]="faStar"
+            size="3x"
+          ></fa-icon>
+        </div>
+
+        <div class="stats__box">
+          <h3>HEALTH NEEDS</h3>
+          <fa-icon
+            [ngClass]="{ active: breed.healthNeeds > 0 }"
+            [icon]="faStar"
+            size="3x"
+          ></fa-icon>
+          <fa-icon
+            [ngClass]="{ active: breed.healthNeeds > 1 }"
+            [icon]="faStar"
+            size="3x"
+          ></fa-icon>
+          <fa-icon
+            [ngClass]="{ active: breed.healthNeeds > 2 }"
+            [icon]="faStar"
+            size="3x"
+          ></fa-icon>
+          <fa-icon
+            [ngClass]="{ active: breed.healthNeeds > 3 }"
+            [icon]="faStar"
+            size="3x"
+          ></fa-icon>
+          <fa-icon
+            [ngClass]="{ active: breed.healthNeeds > 4 }"
+            [icon]="faStar"
+            size="3x"
+          ></fa-icon>
+        </div>
+
+        <div class="stats__box">
+          <h3>PHYSICAL NEEDS</h3>
+          <fa-icon
+            [icon]="faStar"
+            [ngClass]="{ active: breed.physicalNeeds > 0 }"
+            size="3x"
+          ></fa-icon>
+          <fa-icon
+            [ngClass]="{ active: breed.physicalNeeds > 1 }"
+            [icon]="faStar"
+            size="3x"
+          ></fa-icon>
+          <fa-icon
+            [ngClass]="{ active: breed.physicalNeeds > 2 }"
+            [icon]="faStar"
+            size="3x"
+          ></fa-icon>
+          <fa-icon
+            [ngClass]="{ active: breed.physicalNeeds > 3 }"
+            [icon]="faStar"
+            size="3x"
+          ></fa-icon>
+          <fa-icon
+            [ngClass]="{ active: breed.physicalNeeds > 4 }"
+            [icon]="faStar"
+            size="3x"
+          ></fa-icon>
+        </div>
+
+        <div class="stats__box">
+          <h3>TRAINABILITY</h3>
+          <fa-icon
+            [ngClass]="{ active: breed.trainability > 0 }"
+            [icon]="faStar"
+            size="3x"
+          ></fa-icon>
+          <fa-icon
+            [ngClass]="{ active: breed.trainability > 1 }"
+            [icon]="faStar"
+            size="3x"
+          ></fa-icon>
+          <fa-icon
+            [ngClass]="{ active: breed.trainability > 2 }"
+            [icon]="faStar"
+            size="3x"
+          ></fa-icon>
+          <fa-icon
+            [ngClass]="{ active: breed.trainability > 3 }"
+            [icon]="faStar"
+            size="3x"
+          ></fa-icon>
+          <fa-icon
+            [ngClass]="{ active: breed.trainability > 4 }"
+            [icon]="faStar"
+            size="3x"
+          ></fa-icon>
+        </div>
+        <div class="stats__box">
+          <h3>VOCALITY</h3>
+          <fa-icon
+            [ngClass]="{ active: breed.vocality > 0 }"
+            [icon]="faStar"
+            size="3x"
+          ></fa-icon>
+          <fa-icon
+            [ngClass]="{ active: breed.vocality > 1 }"
+            [icon]="faStar"
+            size="3x"
+          ></fa-icon>
+          <fa-icon
+            [ngClass]="{ active: breed.vocality > 2 }"
+            [icon]="faStar"
+            size="3x"
+          ></fa-icon>
+          <fa-icon
+            [ngClass]="{ active: breed.vocality > 3 }"
+            [icon]="faStar"
+            size="3x"
+          ></fa-icon>
+          <fa-icon
+            [ngClass]="{ active: breed.vocality > 4 }"
+            [icon]="faStar"
+            size="3x"
+          ></fa-icon>
+        </div>
+      </div>
+    </ng-template>
+
+    <div class="stats__delete">
+      <div class="stats__buttons">
+        <div *ngIf="updateMode; else showSaveChanges">
+          <button class="form__button-change" (click)="submitUpdate()">
+            SAVE CHANGES
+          </button>
+        </div>
+        <ng-template #showSaveChanges>
+          <div class="stats__buttons__group">
+            <button class="form__button-change" (click)="update()">
+              CHANGE BREED DETAILS
+            </button>
+            <div></div>
+            <button class="form__button-delete" (click)="deleteBreed()">
+              I DONT LIKE THIS BREED
+            </button>
+            <div class=""></div>
+          </div>
+        </ng-template>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,210 @@
+#map {
+  height: 500px;
+  width: 500px;
+}
+
+.not-clicked {
+  height: calc(100vh - 250px);
+  font-family: nexa-heavy, sans-serif, Arial;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.map__page {
+  width: 100vw;
+
+  min-height: calc(100vh - 136px);
+  display: flex;
+  flex-direction: column;
+}
+.title {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-size: 25px;
+  font-family: nexa-bold, sans-serif, Arial;
+}
+.details-content {
+  font-size: 15px;
+  font-family: nexa-bold, sans-serif, Arial;
+}
+.details-vicinity {
+  margin-bottom: 10px;
+}
+.details-rating {
+  margin-bottom: 10px;
+}
+
+.map__drop-down {
+  height: 500px;
+  width: 500px;
+  position: relative;
+  overflow: auto;
+}
+
+.details-image-container {
+  width: 300px;
+  height: 300px;
+}
+.image {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.out-box {
+  width: 100vw;
+
+  min-height: calc(100vh - 136px);
+}
+.map__details {
+  max-height: 100%;
+}
+ul {
+  list-style-type: none;
+}
+.map__container {
+  margin-top: 50px;
+  margin-bottom: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.details {
+  padding: 15px;
+  border-radius: 5px;
+  margin: 15px;
+  box-sizing: border-box;
+  font-family: nexa-regular, sans-serif, Arial;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.fa-icon {
+  stroke: black;
+}
+
+.map__search-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+.form__box {
+  display: flex;
+  flex-direction: column;
+}
+.form__input {
+  margin: 25px;
+  position: relative;
+  height: 50px;
+}
+.form__buttons {
+  font-family: nexa-heavy, sans-serif, Arial;
+  margin-left: 30px;
+  display: flex;
+  height: 54px;
+  width: 412px;
+}
+.form__button {
+  margin-left: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  align-items: center;
+  background-color: #01691d;
+  border: 0;
+  border-radius: 5px;
+  box-sizing: border-box;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-flex;
+
+  font-size: 16px;
+  font-weight: 600;
+  justify-content: center;
+  line-height: 20px;
+  width: 100%;
+  height: 100%;
+
+  overflow: hidden;
+  padding: 0px;
+  padding-left: 20px;
+  padding-right: 20px;
+  text-align: center;
+  touch-action: manipulation;
+}
+
+.form__button:hover,
+.form__button:focus {
+  background-color: #4caf50;
+  color: #ffffff;
+}
+
+.form__input-input {
+  height: 100%;
+  width: 100%;
+  border: 1px solid #c2c2c2;
+  padding-left: 15px;
+  outline: none;
+  font-size: 14px;
+  transition: 0.4s;
+}
+.form__input-input:focus {
+  border: 1px solid #01691d;
+}
+
+.form__label {
+  position: absolute;
+  top: 40%;
+  left: 15px;
+  transform: translateY(-80%);
+  pointer-events: none;
+  font-size: 10px;
+  color: grey;
+}
+
+.active {
+  color: yellow;
+}
+details > summary {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+
+  cursor: pointer;
+}
+
+details > summary::after {
+  content: url(../../../../assets/images/downGreen.png);
+  width: 24px;
+  height: 24px;
+  display: inline-flex;
+  transition: transform 0.3s ease;
+  padding: 16px;
+}
+
+details[open] > summary::after {
+  transform: rotate(180deg);
+}
+
+@media (max-width: 768px) {
+  .map__search-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .map__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .form__buttons {
+    margin-left: 0;
+  }
+  .form__button {
+    margin-top: 30px;
+    margin-left: 0;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}

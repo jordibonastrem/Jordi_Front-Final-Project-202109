@@ -1,0 +1,20 @@
+<div class="breed-list__headers">
+  <h1>Welcome {{ user }}</h1>
+  <!-- <doggy-filters-bar></doggy-filters-bar> -->
+  <div class="breed-list__button-add">
+    <a routerLink="/breeds/create">
+      <button class="form__button">ADD NEW BREED</button>
+    </a>
+  </div>
+</div>
+
+<div class="breed-list" infiniteScroll (scrolled)="onScrollDown()">
+  <doggy-breed *ngFor="let breed of loadedBreeds" [breed]="breed"></doggy-breed>
+
+  <button *ngIf="showButton" (click)="onScrollTop()" class="breed-list__button">
+    <fa-icon [icon]="faArrowUp"></fa-icon>
+  </button>
+</div>
+<div *ngIf="showSpinner" class="spinner">
+  <mat-spinner class="mat-spinner"></mat-spinner>
+</div>

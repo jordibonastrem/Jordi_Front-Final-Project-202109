@@ -1,0 +1,39 @@
+.details {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: nexa-regular;
+  font-size: 16px;
+}
+.title {
+  margin-top: 30px;
+  margin-bottom: 20px;
+  font-size: 32px;
+}
+
+details > summary {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+
+  font-size: 20px;
+  cursor: pointer;
+}
+
+details > summary::after {
+  content: url(../../../../assets/images/rightArrow32.svg);
+  width: 24px;
+  height: 24px;
+  display: inline-flex;
+  transition: transform 0.3s ease;
+  padding: 16px;
+}
+
+details[open] > summary::after {
+  -webkit-transform-origin: 50% 50%;
+  -moz-transform-origin: 50% 50%;
+  -o-transform-origin: 50% 50%;
+  transform-origin: 50% 50%;
+
+  transform-origin: 100% 100%;
+  transform: rotate(180deg);
+}

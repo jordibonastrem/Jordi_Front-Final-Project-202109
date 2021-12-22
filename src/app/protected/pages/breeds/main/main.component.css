@@ -1,0 +1,5 @@
+.out-box {
+  width: 100vw;
+
+  min-height: calc(100vh - 136px);
+}

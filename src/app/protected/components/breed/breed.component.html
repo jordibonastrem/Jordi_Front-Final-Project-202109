@@ -1,0 +1,17 @@
+<div class="card" (click)="onClick()">
+  <a [routerLink]="['/breeds/details', breed.id]" class="card__anchor">
+    <div class="card__container">
+      <div class="img__container">
+        <img
+          alt="dog image"
+          class="card__image"
+          [src]="breed.breedPhoto"
+          width=""
+        />
+      </div>
+      <div class="card__text-container">
+        <h3 class="card__title">{{ breed.breedName }}</h3>
+      </div>
+    </div>
+  </a>
+</div>

@@ -1,0 +1,55 @@
+<div></div>
+<nav class="nav">
+  <i class="fa fa-american-sign-language-interpreting fa-5x" aria-hidden="true">
+  </i>
+
+  <input type="checkbox" id="check" />
+  <label for="check" class="checkbtn">
+    <fa-icon [icon]="faBars"></fa-icon>
+  </label>
+  <label class="outside_logo">
+    <img
+      class="logo"
+      routerLink="/"
+      src="assets/images/logoblanc.svg"
+      alt="Logo"
+    />
+  </label>
+
+  <ul class="nav__list">
+    <li class="nav__list-item">
+      <a class="nav__list-item__ancor" (click)="onClick()" routerLink="/breeds">
+        breeds
+      </a>
+    </li>
+    <li class="nav__list-item">
+      <a class="nav__list-item__ancor" (click)="onClick()" routerLink="/map"
+        >map</a
+      >
+    </li>
+    <li class="nav__list-item">
+      <a
+        class="nav__list-item__ancor"
+        (click)="onClick()"
+        routerLink="/scanner"
+      >
+        scanner
+      </a>
+    </li>
+    <li class="nav__list-item">
+      <a class="nav__list-item__ancor" (click)="onClick()" routerLink="/quiz"
+        >quiz</a
+      >
+    </li>
+    <li class="nav__list-item">
+      <a
+        id="logout"
+        class="nav__list-item__ancor"
+        (click)="logout()"
+        routerLink="/auth/login"
+      >
+        Logout
+      </a>
+    </li>
+  </ul>
+</nav>

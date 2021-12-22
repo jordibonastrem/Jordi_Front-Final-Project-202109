@@ -1,0 +1,52 @@
+<div class="out-box">
+  <div class="form">
+    <form
+      (ngSubmit)="save()"
+      autocomplete="off"
+      [formGroup]="myForm"
+      id="LoginForm"
+    >
+      <div class="form__container">
+        <h1 class="form__title">Login</h1>
+
+        <div class="form__box">
+          <div class="form__input">
+            <label class="form__label">Username</label>
+            <input
+              class="form__input-input"
+              type="text"
+              formControlName="username"
+            />
+          </div>
+
+          <span class="form__alert" *ngIf="inputIsValid('username')"
+            >user must be 3 atleast 3 letters</span
+          >
+        </div>
+
+        <div class="form__box">
+          <div class="form__input">
+            <label class="form__label">Password</label>
+            <input
+              class="form__input-input"
+              type="password"
+              formControlName="password"
+            />
+          </div>
+
+          <span class="form__alert" *ngIf="inputIsValid('password')"
+            >password must be 3 characters</span
+          >
+        </div>
+
+        <button class="form__button" type="submit">Login</button>
+
+        <div class="form__text">
+          <span> Need an account? </span>
+
+          <a routerLink="/auth/register">Sign up</a>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

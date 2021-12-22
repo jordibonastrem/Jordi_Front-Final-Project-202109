@@ -1,0 +1,172 @@
+<div class="create">
+  <div class="create__container">
+    <div class="form">
+      <form (ngSubmit)="save()" autocomplete="off" [formGroup]="myForm">
+        <div class="create__container">
+          <div>
+            <label for="upload-photo" class="create__add-box">
+              <img
+                id="blah"
+                [src]="
+                  imageSrc ||
+                  'https://www.wisdompanel.com/images/dog-breed-placeholder.png'
+                "
+                alt="insert image"
+              />
+            </label>
+            <input
+              type="file"
+              name="photo"
+              id="upload-photo"
+              (change)="readURL($event)"
+              (change)="setImage($event)"
+              name="breedPhoto"
+            />
+          </div>
+
+          <div class="form__container">
+            <div class="form__inputs__cointainer">
+              <div class="form__group">
+                <div class="form__box">
+                  <div class="form__input">
+                    <label class="form__label">Breed name</label>
+                    <input
+                      class="form__input-input"
+                      type="text"
+                      formControlName="breedName"
+                    />
+                  </div>
+                  <div class="form__alert">
+                    <span *ngIf="inputIsValid('breedName')"
+                      >breed name needs has to have atleast 5 characters</span
+                    >
+                  </div>
+                </div>
+
+                <div class="form__box">
+                  <div class="form__input">
+                    <label class="form__label">Friendliness</label>
+                    <input
+                      class="form__input-input"
+                      type="text"
+                      formControlName="friendliness"
+                    />
+                  </div>
+                  <div class="form__alert">
+                    <span *ngIf="inputIsValid('friendliness')"
+                      >friendliness has to be a number between 0 and 5</span
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <div class="form__group">
+                <div class="form__box">
+                  <div class="form__input">
+                    <label class="form__label">Adaptability</label>
+                    <input
+                      class="form__input-input"
+                      type="text"
+                      formControlName="adaptability"
+                    />
+                  </div>
+                  <div class="form__alert">
+                    <span *ngIf="inputIsValid('adaptability')"
+                      >adaptability has to be a number between 0 and 5</span
+                    >
+                  </div>
+                </div>
+
+                <div class="form__box">
+                  <div class="form__input">
+                    <label class="form__label">Health needs</label>
+                    <input
+                      class="form__input-input"
+                      type="text"
+                      formControlName="healthNeeds"
+                    />
+                  </div>
+                  <div class="form__alert">
+                    <span *ngIf="inputIsValid('healthNeeds')"
+                      >health needs has to be a number between 0 and 5</span
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <div class="form__group">
+                <div class="form__box">
+                  <div class="form__input">
+                    <label class="form__label">Physical needs</label>
+                    <input
+                      class="form__input-input"
+                      type="text"
+                      formControlName="physicalNeeds"
+                    />
+                  </div>
+                  <div class="form__alert">
+                    <span *ngIf="inputIsValid('physicalNeeds')"
+                      >physical needs has to be a number between 0 and 5</span
+                    >
+                  </div>
+                </div>
+                <div class="form__box">
+                  <div class="form__input">
+                    <label class="form__label">Trainability</label>
+                    <input
+                      class="form__input-input"
+                      type="text"
+                      formControlName="trainability"
+                    />
+                  </div>
+                  <div class="form__alert">
+                    <span *ngIf="inputIsValid('trainability')"
+                      >trainability has to be a number between 0 and 5</span
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <div class="form__group">
+                <div class="form__box">
+                  <div class="form__input">
+                    <label class="form__label">Vocality</label>
+                    <input
+                      class="form__input-input"
+                      type="text"
+                      formControlName="vocality"
+                    />
+                  </div>
+                  <div class="form__alert">
+                    <span *ngIf="inputIsValid('vocality')"
+                      >vocality has to be a number between 0 and 5</span
+                    >
+                  </div>
+                </div>
+
+                <div class="form__box">
+                  <div class="form__input">
+                    <label class="form__label">Description</label>
+                    <input
+                      class="form__input-input"
+                      type="text"
+                      formControlName="description"
+                    />
+                  </div>
+                  <div class="form__alert">
+                    <span *ngIf="inputIsValid('description')"
+                      >description atleast 15 characters</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="button__container">
+              <button class="form__button" type="submit">Submit</button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

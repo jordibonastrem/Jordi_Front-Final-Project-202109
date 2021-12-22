@@ -1,0 +1,92 @@
+<div class="map__page">
+  <form class="map__search-bar">
+    <div class="form__box">
+      <div class="form__input">
+        <label class="form__label">Postal code</label>
+        <input type="text" class="form__input-input" />
+      </div>
+    </div>
+    <div class="form__box">
+      <div class="form__input">
+        <label class="form__label">City</label>
+        <input type="text" class="form__input-input" />
+      </div>
+    </div>
+    <div class="form__box">
+      <div class="form__input">
+        <label class="form__label">Country</label>
+        <input type="text" class="form__input-input" />
+      </div>
+    </div>
+
+    <div class="form__buttons">
+      <button class="form__button" type="button" (click)="showVets()">
+        <p>VETS</p>
+      </button>
+      <button class="form__button" type="button" (click)="showParks()">
+        PARKS
+      </button>
+    </div>
+  </form>
+
+  <div *ngIf="buttonClickedStatus; else notClicked">
+    <div class="map__container">
+      <div id="map"></div>
+      <div class="map__drop-down">
+        <div class="map__details">
+          <ul class="map__details-list">
+            <li
+              class="map__details-item"
+              *ngFor="let result of results; let i = index"
+            >
+              <details class="details">
+                <summary>
+                  <h1 class="title">{{ results[i].name }}</h1>
+                </summary>
+                <div class="details-content">
+                  <h3 class="details-vicinity">C/:{{ results[i].vicinity }}</h3>
+
+                  <h3 class="details-rating">
+                    Rating :{{ results[i].rating }}
+                  </h3>
+                  <div>
+                    <fa-icon
+                      [icon]="faStar"
+                      [ngClass]="{ active: results[i].rating > 1 }"
+                    ></fa-icon>
+                    <fa-icon
+                      [icon]="faStar"
+                      [ngClass]="{ active: results[i].rating > 2 }"
+                    ></fa-icon>
+                    <fa-icon
+                      [icon]="faStar"
+                      [ngClass]="{ active: results[i].rating > 3 }"
+                    ></fa-icon>
+                    <fa-icon
+                      [icon]="faStar"
+                      [ngClass]="{ active: results[i].rating > 4 }"
+                    ></fa-icon>
+                    <fa-icon
+                      [icon]="faStar"
+                      [ngClass]="{ active: results[i].rating >= 5 }"
+                    ></fa-icon>
+                  </div>
+
+                  <div class="details-image-container">
+                    <img class="image" [src]="handleImage(results[i])" alt="" />
+                  </div>
+                </div>
+              </details>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <ng-template #notClicked>
+    <div class="not-clicked">
+      <h1>Please activate location</h1>
+      <p>And and press a button to se the map :)</p>
+    </div>
+  </ng-template>
+</div>
